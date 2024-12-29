@@ -6,7 +6,6 @@ II. Name : Privubrotha Garai
 III. Name : Rup Debnath
 IV. Name :
 V. Name :
-VI. Name :
 
 
 
