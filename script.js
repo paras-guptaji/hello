@@ -80,6 +80,7 @@ const products = [
     { id: 54, name: " Kidney Beans(Rajma)", farm: "farm8", price: 430, category: "grains", image: "https://biobasics.org/cdn/shop/files/order-organic-rajima-chitra-online-at-bio-basics.png?v=1736601880" },
     { id: 55, name: " Pigeon Beans(Toor Dal)", farm: "farm8", price: 130, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGTVvdN1rGmHB_Mvgvfgm5HsnUQKqIb1do5A&s" },
     { id: 56, name: " Black Gram(Urad Dal)", farm: "farm8", price: 120, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpvaymYXLOdxIW7HV7J4ZyMdQNIB0bwjbvUw&s" },
+    { id: 57, name: " Chia", farm: "farm8", price: 3999, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ImdprbHdRJnqFN5TXTUaWhUdyk9KmZMEfw&s" },
     { id: 58, name: " Hoorsde Gram(Kulthi)", farm: "farm8", price: 140 , category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROefSuch6v2EeYb__f34FC_5H6i3-KZkQz_w&s" },
     { id: 59, name: " Soybean", farm: "farm8", price: 130, category: "grains", image: "https://5.imimg.com/data5/SI/VC/MY-21496561/soybean-seeds-500x500.jpg" },
     { id: 60, name: " Blucwheat(Kuttu)", farm: "farm8", price: 280, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMW6QLJJizmMQNEy8WJRzY0BfGhcMANz4b_A&s" },
