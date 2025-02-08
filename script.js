@@ -3,13 +3,14 @@ function displayProducts() {
     productsContainer.innerHTML = '';
 
     products.forEach(product => {
+        const unit = product.category.toLowerCase() === 'liquid'  ? 'litre' : 'kg';
         const productElement = document.createElement('div');
         productElement.className = 'product-card';
         productElement.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>From ${product.farm}</p>
-            <p>₹${product.price.toFixed(2)}/kg</p>
+            <p>₹${product.price.toFixed(2)}/${unit}</p>
            `; 
         productsContainer.appendChild(productElement);
     });
@@ -85,7 +86,7 @@ const products = [
     { id: 60, name: " Blucwheat(Kuttu)", farm: "farm8", price: 180, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMW6QLJJizmMQNEy8WJRzY0BfGhcMANz4b_A&s" },
 
     //dairy category added//
-    { id: 61, name: "Milk", category: "spices", price: 80, farm: "AMIL dairy", address: "6060 Udder St, Lactoseville", image: "https://th.bing.com/th/id/OIP.QWKJmi9ZKNwduLLDqwoy6QHaE8?w=282&h=188&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+    { id: 61, name: "Milk", category: "liquid", price: 80, farm: "AMIL dairy", address: "6060 Udder St, Lactoseville", image: "https://th.bing.com/th/id/OIP.QWKJmi9ZKNwduLLDqwoy6QHaE8?w=282&h=188&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
 
     { id: 62, name: "Cheese", category: "Dairy", price: 200, farm: "AMIL dairy", address: "6161 Curds Way, Moldyville", image: "https://th.bing.com/th/id/OIP.CAINRPFv1EUiOHO1jiAHtwHaEo?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
     { id: 63, name: "Yogurt", category: "Dairy", price: 150, farm: "AMIL dairy", address: "6262 Probiotic Pl, Fermentville", image: "https://pngimg.com/uploads/yogurt/yogurt_PNG15189.png" },
@@ -108,7 +109,7 @@ const products = [
     { id: 80, name: "Gouda", category: "Dairy", price: 549, farm: "AMIL dairy", address: "7979 Waxy Wheel Rd, Hollandville", image: "https://th.bing.com/th/id/OIP.5Vy-Wc0PRQkvR8TiCEr91wHaFR?w=255&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
 
     //cooking oil//
-    { id: 81, name: " Mustard Oil", farm: "Directfarm oil pvt. ltd.", price: 160 , category: "liquid", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP6XUjh6n2bc-m95HvRXzLhX5Kll8Im2GHg&s" },
+     { id: 81, name: " Mustard Oil", farm: "Directfarm oil pvt. ltd.", price: 160 , category: "liquid", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP6XUjh6n2bc-m95HvRXzLhX5Kll8Im2GHg&s" },
     { id: 82, name: " Ricebran Oil", farm: "Directfarm oil pvt. ltd.", price: 160, category: "liquid", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdERFbrM5WF2wkzzLcT_bh17LvWFZhE0mAYg&s" },
     { id: 83, name: " Soybean Oil", farm: "Directfarm oil pvt. ltd.", price: 189, category: "liquid", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJC1ZJgcHmeIzKGl9hZDgbia780kbsER8VDQ&s" },
     { id: 84, name: " Palm Oil", farm: "Directfarm oil pvt. ltd.", price: 1102, category: "liquid", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0lUaACQH66RCtKQfVcrITDds_-7N3SLnJ3Q&s" },
