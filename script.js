@@ -42,6 +42,7 @@ closeButtons.forEach((button) => {
   })
 })
 
+// Close modals when clicking outside
 window.onclick = (event) => {
   if (event.target.classList.contains("modal")) {
     event.target.style.display = "none"
@@ -200,6 +201,7 @@ function sendMessage() {
     chatMessages.appendChild(message)
     chatInput.value = ""
 
+    // Simulate farmer response
     setTimeout(() => {
       const farmerMessage = document.createElement("p")
       farmerMessage.textContent = "Farmer: Thank you for your message. How can I help you?"
@@ -220,4 +222,7 @@ function filterProducts() {
 
   displayProducts(filteredProducts)
 }
+
+
+// Initial display of products
 displayProducts()

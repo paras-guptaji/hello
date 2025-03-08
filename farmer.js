@@ -7,7 +7,6 @@ const userData = {
     profileImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
 };
 
-// Get products from local storage or initialize empty array
 const products = JSON.parse(localStorage.getItem("products")) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,14 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setupEventListeners();
     
-    // Display only the recently added products in the farmer's dashboard
     displayFarmerProducts();
     
     populateUserData();
 });
 
 function initDashboard() {
-    // Initialize with sample products if none exist
     if (products.length === 0) {
         addSampleProducts();
     }
@@ -124,13 +121,10 @@ function addProduct(e) {
                 date: new Date().toISOString()
             };
             
-            // Add new product to the beginning of the array so it shows up first
             products.unshift(newProduct);
             
-            // Save all products to localStorage so they're accessible in marketplace
             localStorage.setItem('products', JSON.stringify(products));
             
-            // Update the farmer dashboard to show the recently added product
             displayFarmerProducts();
             
             e.target.reset();
@@ -150,8 +144,6 @@ function displayFarmerProducts() {
     
     farmerProducts.innerHTML = '';
 
-    // Only show the 4 most recently added products in the farmer dashboard
-    // Since we're adding products with unshift(), the most recent are at the beginning
     const recentProducts = products.slice(0, 4);
     
     if (recentProducts.length === 0) {
@@ -198,9 +190,10 @@ function showProductDetails(productId) {
         </div>
         <div class="product-modal-info">
             <p><strong>Category:</strong> ${product.category}</p>
-            <p><strong>Price:</strong> ₹${product.price.toFixed(2)}</p>
-            <p><strong>Stock:</strong> ${product.amount} units</p>
             <p><strong>Farm:</strong> ${product.farm}</p>
+            <p><strong>Price:</strong> ₹${product.price.toFixed(2)}</p>
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p><strong>Stock:</strong> ${product.amount} units</p>
             <p><strong>Address:</strong> ${product.address}</p>
             <p><strong>Description:</strong> ${product.description || 'No description provided'}</p>
             <p><strong>Added on:</strong> ${new Date(product.date).toLocaleDateString()}</p>
@@ -213,8 +206,7 @@ function showProductDetails(productId) {
 function addSampleProducts() {
     const sampleProducts = [
         {
-            id: Date.now() - 1000,
-            name: "Fresh Organic Lettuce",
+            id: Date.now() - 1000,name: "Fresh Organic Lettuce",
             category: "Vegetables",
             price: 100,
             amount: 50,
@@ -318,7 +310,6 @@ function addSampleProducts() {
             { id: 52, name: " Chickpeas (Gram)", farm: "farm8", category: "grains", price: 120, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8JBbGG7BhH6NL_FVudS4dTMQ0ioUMKEkVvA&s" },
             { id: 53, name: " Lentils(Masoor)", farm: "farm8", price: 120, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrp5swwCh2E41xcaRfX9JhuE4Z8IMfZZpIvw&s" },
             { id: 54, name: " Kidney Beans(Rajma)", farm: "farm8", price: 430, category: "grains", image: "https://biobasics.org/cdn/shop/files/order-organic-rajima-chitra-online-at-bio-basics.png?v=1736601880" },
-            { id: 55, name: " Pigeon Beans(Toor Dal)", farm: "farm8", price: 130, category  },
             { id: 55, name: " Pigeon Beans(Toor Dal)", farm: "farm8", price: 130, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGTVvdN1rGmHB_Mvgvfgm5HsnUQKqIb1do5A&s" },
             { id: 56, name: " Black Gram(Urad Dal)", farm: "farm8", price: 120, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpvaymYXLOdxIW7HV7J4ZyMdQNIB0bwjbvUw&s" },
             { id: 57, name: " Chia", farm: "farm8", price: 3999, category: "grains", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ImdprbHdRJnqFN5TXTUaWhUdyk9KmZMEfw&s" },
