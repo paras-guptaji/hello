@@ -1,0 +1,407 @@
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: darkseagreen;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: rgb(0, 80, 24);
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: rgb(0, 255, 76);
+}
+
+
+.main-content {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+
+#sidebar {
+    width: 220px;
+    background-color: white;
+    border-right: 1px solid #ddd;
+    height: 100%;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-profile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.girl {
+    height: 70px;
+    width: 70px;
+    border: 2px solid green;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.menu-item:hover {
+    background-color: rgba(144, 238, 144, 0.2);
+}
+
+.menu-item.active {
+    background-color: rgba(144, 238, 144, 0.3);
+    border-left: 4px solid darkseagreen;
+}
+
+.icon-container {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.menu-item h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo2 {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    border: 4px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#choose {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filling {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: rgba(166, 235, 197, 0.2);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filling:focus {
+    outline: none;
+    border-color: darkseagreen;
+    box-shadow: 0 0 0 2px rgba(143, 188, 143, 0.3);
+}
+
+.filling::placeholder {
+    color: #999;
+}
+
+
+.dashboard-welcome {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-welcome h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dashboard-welcome p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .icon-container {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-right {
+        margin-top: 10px;
+        gap: 15px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+}
+
+
+.sales-summary {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+   
+    
+}
+
+.sales-summary h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.summary-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+
+.summary-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;  
+    transition: transform 0.3s ease-in-out;
+    height: 100px;
+    width:20px;
+}
+
+.summary-box:hover {
+    transform: scale(1.05);
+}
+
+
+.summary-box .icon {
+    width: 20px; 
+    height: 20px;
+}
+
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.summary-details h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+
+.growth {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+
+.summary-filters {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active {
+    background: #4CAF50;
+    color: white;
+}
+
+button{
+    background-color: #4CAF50;
+    color:aliceblue;
+    width:700px;
+    height:45px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+#people{
+    height: 90px;
+    width:90px;
+}
+
+#basket{
+    height: 100px;
+    width:100px;
+}
+#ana{
+    height: 140px;
+    width:140px;
+}
