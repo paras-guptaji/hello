@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectFarm - Farmers Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="farmer.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIP.d_tpb5cN4ykZrR2p2bFsLAHaDt?w=316&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DirectFarm Logo" class="logo-img">
+            </div>
+            <div class="profile-small">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.adBnOV-Hw-9zvCLlElmU_wHaEO&pid=Api&P=0&h=180" alt="Farmer Profile" class="profile-img-small">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="bi bi-house-door"></i><span>Dashboard</span></a>
+                <a href="#"><i class="bi bi-box-seam"></i><span>My Products</span></a>
+                <a href="#"><i class="bi bi-file-earmark-text"></i><span>PO Orders</span></a>
+                <a href="#"><i class="bi bi-graph-up"></i><span>Analytics</span></a>
+                <a href="#"><i class="bi bi-chat-dots"></i><span>Messages</span></a>
+                <a href="#"><i class="bi bi-gear"></i><span>Settings</span></a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="bi bi-list"></i></button>
+                </div>
+                <div class="header-right">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="marketplace.html">MARKETPLACE</a></li>
+                        <li><a href="#contact">CONTACT US</a></li>
+                        <li><a href="#about">ABOUT US</a></li>
+                    </ul>
+                    <div class="profile-menu">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.adBnOV-Hw-9zvCLlElmU_wHaEO&pid=Api&P=0&h=180" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h3>WELCOME</h3>
+                        <h1>Welcome Farmer Dashboard</h1>
+                        <p>Manage your farm products, track orders, and connect with customers all in one place.</p>
+                       
+                    </div>
+                    <div class="welcome-image">
+                        <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Farmer">
+                    </div>
+                </div>
+
+                <div class="add-product-section">
+                    <h2>Add New Product</h2>
+                    <div class="product-form-container">
+                        <form id="product-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="product-name">Product Name</label>
+                                    <input type="text" id="product-name" placeholder="Enter product name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-type">Product Type</label>
+                                    <select id="product-type" required>
+                                        <option value="">Select Product Type</option>
+                                        <option value="Vegetables">Vegetables</option>
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Grains">Grains</option>
+                                        <option value="Dairy">Dairy</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-price">Price (₹)</label>
+                                    <input type="number" id="product-price" placeholder="0.00" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-amount">Quantity</label>
+                                    <input type="number" id="product-amount" placeholder="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="farm-name">Farm Name</label>
+                                    <input type="text" id="farm-name" placeholder="Your farm name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="farm-address">Farm Address</label>
+                                    <input type="text" id="farm-address" placeholder="Your farm address" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="product-description">Product Description</label>
+                                    <textarea id="product-description" placeholder="Describe your product"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-image">Product Image</label>
+                                    <input type="file" id="product-image" accept="image/*" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn primary-btn">Add Product</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="recent-products-section">
+                    <div class="section-header">
+                        <h2>Recent Products</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="product-cards" id="farmer-products">
+                    
+                    </div>
+                </div>
+
+                <div class="sales-summary-section">
+                    <div class="section-header">
+                        <h2>Sales Summary</h2>
+                        <div class="period-selector">
+                            <button class="active">Day</button>
+                            <button>Week</button>
+                            <button>Month</button>
+                        </div>
+                    </div>
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="summary-icon green">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Total Sales</h3>
+                                <p class="amount">₹1,24000.00</p>
+                                <p class="change positive">+14% from last period</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon blue">
+                                <i class="bi bi-cart"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>Total Orders</h3>
+                                <p class="amount">64</p>
+                                <p class="change positive">+6% from last period</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon orange">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="summary-info">
+                                <h3>New Customers</h3>
+                                <p class="amount">32</p>
+                                <p class="change negative">+3% from last period</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-linkedin"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 DirectFarm. All rights reserved.</p>
+        </div>
+    </footer>
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <p id="modal-product-details"></p>
+            <div class="modal-actions">
+                <button id="edit-product" class="btn secondary-btn">Edit Product</button>
+                <button id="delete-product" class="btn danger-btn">Delete Product</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="farmer.js"></script>
+</body>
+</html>
