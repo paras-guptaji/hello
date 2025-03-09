@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function redirectBasedOnUserType(user) {
       if (user.userType === "consumer") {
-        window.location.href = "market.html"
+        window.location.href = "marketplace.html"
       } else if (user.userType === "farmer") {
         window.location.href = "farmer.html"
       } else {
