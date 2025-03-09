@@ -3,21 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("email")
     const passwordInput = document.getElementById("password")
   
-    // Declare AuthService or import it if it's in a separate file
-    // For example, if AuthService is in auth.js:
-    // import AuthService from './auth.js';
-    // Or, if AuthService is defined in the same file or a globally accessible script:
     class AuthService {
       constructor() {
-        // Implement your authentication logic here
-        // For example, you might store user data in localStorage
       }
   
       login(email, password) {
-        // Placeholder for login logic
-        // In a real application, you would verify the email and password
-        // against a database or authentication service.
-        // For this example, we'll just create a dummy user.
         if (email === "consumer@example.com" && password === "password") {
           return { userType: "consumer", email: email }
         } else if (email === "farmer@example.com" && password === "password") {
@@ -28,9 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   
       getCurrentUser() {
-        // Placeholder for getting the current user
-        // In a real application, you would retrieve user data from localStorage or a cookie.
-        return null // Or return a user object if one is found
+        
+        return null 
       }
     }
   
@@ -75,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (user.userType === "farmer") {
         window.location.href = "farmer.html"
       } else {
-        // Default fallback if userType is undefined
         window.location.href = "index.html"
       }
     }
