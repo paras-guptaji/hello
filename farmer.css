@@ -22,17 +22,16 @@ body {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 40px;
     margin-right: 10px;
-    border-radius: 50%;
     object-fit: cover;
 }
-
 .brand {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: #1717e4;
+    padding-left: 30px;
 }
 
 .nav-right {
@@ -49,7 +48,7 @@ body {
 }
 
 .nav-right a:hover {
-    color: rgb(0, 255, 76);
+    color: rgb(58, 8, 242);
 }
 
 

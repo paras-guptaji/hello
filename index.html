@@ -3,81 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DirectFarm : Bridging the gap between the farmers and consumers </title>
-    <link rel="stylesheet" href="styles.css">
+    <title>DirectFarm - Connecting Farmers and Consumers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>DirectFarm</h1>
-    <section class="hero">
-        <div class="subheading">
-            <h1>Produce Direct Farm</h1>
-            <h2>WELCOME TO DIRECT FARM - YOUR ULTIMATE PRODUCTS TRADING PLATFORM </h2>
-            <p>At Farm Direct, we are committed to changing the way farmers can buy and sell their produce directly to consumers and retailers at fair prices. Our platform enables small business owners to buy fresh produce directly from farmers and farmers to sell their produce directly to retailers. Eliminates middlemen and allows fair pricing  
-            <h4>Special Features :</h4>
-            <p>  Buy and sell various agricultural products online .</p>
-            <p> Easily connect with local farmers and buyers .</p>
-            <p> Direct Farm brings all agricultural inputs from seed to market on a single transparent  platform </p>
-                   <p> Join us in building the feature of Indian agriculture explore our online store where you can buy nad sell products, buy wholesale and be part of a large network of retailers -farmers 
-                       Direct Farm -connecting .</p>
-    <button>Explore</button>
-    </div>
-    </section>
-    <section class="hero1">
-        <div class="category-buttons">
-            <button class="category-button active" data-category="all">All</button>
-            <button class="category-button" data-category="fruits">Fruits</button>
-            <button class="category-button" data-category="vegetables">Vegetables</button>
-            <button class="category-button" data-category="grains">Grains</button>
+    <nav>
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIP.d_tpb5cN4ykZrR2p2bFsLAHaDt?w=316&h=174&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DirectFarm Logo">
+            <span class="logo-text">DirectFarm</span>
         </div>
-    <div id="products" class="product-id">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="marketplace.html">MARKETPLACE</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="farmer.html" class="publish-btn">PUBLISH LISTING <i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
 
+    <section id="home">
+        <h1>Welcome to DirectFarm</h1>
+        <p>Bridging the gap between farmers and consumers. Get fresh produce directly from local farms!</p>
+    </section>
 
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://th.bing.com/th/id/OIP.SqEm8ltJULc_Xnqx8R8nGAHaEK?w=302&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 1">
+            <div class="slide-content">
+                <h2>BUY AND SELL</h2>
+                <h1>AGRICULTURE<br>PRODUCE</h1>
+                <a href="farmer.html" class="cta-btn">Publish Listing</a>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="https://th.bing.com/th/id/OIP.Z8MQVPcu5Y22bdS67uRPmQHaE_?w=265&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 2">
+            <div class="slide-content">
+                <h2>CONNECT DIRECTLY</h2>
+                <h1>FARM TO<br>TABLE</h1>
+                <a href="marketplace.html" class="cta-btn">Browse Products</a>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="https://th.bing.com/th/id/OIP.kYci_4uub03D6mR1C0uEewHaFj?w=200&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 3">
+            <div class="slide-content">
+                <h2>FRESH & LOCAL</h2>
+                <h1>SUPPORT LOCAL<br>FARMERS</h1>
+                <a href="#about" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-</section>
-<section class="about us">
-        <div  id="about-us">
-            <h2>About Us :</h2>
-            <p>Welcome to DirectFarm, a platform dedicated to bridging the gap between farmers and consumers. We believe in empowering farmers by giving them direct access to markets, ensuring fair compensation for their hard work, and fostering sustainable agricultural practices.</p>
-        <p>Our vision is to create a world where farmers thrive, and communities enjoy fresh, local produce. By eliminating intermediaries, we make it easier for farmers to sell their goods and for consumers to access high-quality, locally-sourced food.</p>
-        <p>At DirectFarm, we are committed to building a transparent, fair, and sustainable food system that benefits everyone. Join us in supporting farmers and promoting a healthier, more sustainable future.</p>
-        <h2>Contact Us :</h2>
-        <p>We'd love to hear from you! wheather you're a farmer looking to join our platform,a consumer with questions,or a business intertested in partnerships,feel to reach out.</p>  
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
     
-    <h3>Address:</h3>
-    <p>Direct Farm Headquaters</p>
-    <p>123,Sustainable Avenue,Greenfield,Country XYZ</p>
-    </div>
- 
-</section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>DirectFarm is dedicated to connecting farmers directly with consumers, ensuring fresh produce and fair prices for all. Our platform empowers local farmers and provides consumers with access to high-quality, locally-sourced products.</p>
+    </section>
 
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@directfarm.com">info@directfarm.com</a></p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Farm Lane, Harvest City, AG 12345</p>
+    </section>
 
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-linkedin"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank" id="contacts"><i class="bi bi-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 DirectFarm. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-<footer>
-    <div class="footer">
-        <!-- Social Media Links with Icons -->
-        <a href="" target="_main1" id="contact">
-            <i class="bi bi-linkedin"></i>Linkedin
-        </a>
-        <a href="" target="_main1" id="contact">
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
-            <i class="bi bi-facebook"></i>Facebook
-        </a>
-        <a href="" target="_main1" id="contact">
-            <i class="bi bi-instagram"></i>Instragram
-        </a>
-        <a href="" target="_main1" id="contact">
-            <i class="bi bi-twitter"></i>Twitter
-        </a>
-        
-        <!-- Copyright Section -->
-        <p id="copyright">&copy; 2025 Direct Farm - All Rights Reserved</p>
-    </div>
-</footer>
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
 
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
 
-    
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+    </script>
 </body>
-<script src="script.js"></script>
 </html>
