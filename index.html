@@ -20,7 +20,9 @@
             <li><a href="marketplace.html">MARKETPLACE</a></li>
             <li><a href="#contact">CONTACT US</a></li>
             <li><a href="#about">ABOUT US</a></li>
-            <li><a href="farmer.html" class="publish-btn">PUBLISH LISTING <i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="farmer.html" class="publish-btn">PUBLISH LISTING</a></li>
+            <li><a href="#" class="logout-button">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            </li>
         </ul>
     </nav>
 
@@ -31,7 +33,7 @@
 
     <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="https://th.bing.com/th/id/OIP.SqEm8ltJULc_Xnqx8R8nGAHaEK?w=302&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 1">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.rewom5e0DLl6LJjABzjjdAHaDt&pid=Api&P=0&h=180" alt="Farm Image 1">
             <div class="slide-content">
                 <h2>BUY AND SELL</h2>
                 <h1>AGRICULTURE<br>PRODUCE</h1>
@@ -39,7 +41,7 @@
             </div>
         </div>
         <div class="mySlides fade">
-            <img src="https://th.bing.com/th/id/OIP.Z8MQVPcu5Y22bdS67uRPmQHaE_?w=265&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 2">
+            <img src="https://techcentral.co.za/wp-content/uploads/2024/01/supermarket-food-1500-800.jpg" alt="Farm Image 2">
             <div class="slide-content">
                 <h2>CONNECT DIRECTLY</h2>
                 <h1>FARM TO<br>TABLE</h1>
@@ -47,7 +49,7 @@
             </div>
         </div>
         <div class="mySlides fade">
-            <img src="https://th.bing.com/th/id/OIP.kYci_4uub03D6mR1C0uEewHaFj?w=200&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Farm Image 3">
+            <img src="https://thecreativeadventurer.com/wp-content/uploads/2023/06/The-Creative-Adventurer_1200x675_ProvenceMarkets-900x470.jpg" alt="Farm Image 3">
             <div class="slide-content">
                 <h2>FRESH & LOCAL</h2>
                 <h1>SUPPORT LOCAL<br>FARMERS</h1>
@@ -71,7 +73,7 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@directfarm.com">info@directfarm.com</a></p>
+        <p>Email: <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2c6cbd0c7c1d6c4c3d0cf8cc1cdcf"><span class="__cf_email__" data-cfemail="365f58505976525f445355425057445b1855595b">[email&#160;protected]</span></a></p>
         <p>Phone: (123) 456-7890</p>
         <p>Address: 123 Farm Lane, Harvest City, AG 12345</p>
     </section>
@@ -88,37 +90,74 @@
         </div>
     </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+    document.addEventListener("DOMContentLoaded", () => {
+        if (typeof AuthService === "undefined") {
+          console.error("AuthService not loaded")
+          return
         }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
+      
+        const authService = new AuthService()
+        const user = authService.getCurrentUser()
+      
+        if (!user) {
+          window.location.href = "login.html"
+          return
         }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
+      
+        
+        const userNameElements = document.querySelectorAll(".user-name")
+        if (userNameElements) {
+          userNameElements.forEach((element) => {
+            element.textContent = user.name
+          })
         }
+      
+        const logoutButtons = document.querySelectorAll(".logout-button")
+        if (logoutButtons) {
+          logoutButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
+              e.preventDefault()
+              authService.logout()
+              window.location.href = "login.html"
+            })
+          })
+        }
+    })
+      
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-        setInterval(() => {
-            plusSlides(1);
-        }, 5000);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+    setInterval(() => {
+        plusSlides(1);
+    }, 5000);
     </script>
+    <script src="load-auth2.js"></script>
 </body>
 </html>
+

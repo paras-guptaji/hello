@@ -1,3 +1,51 @@
+  document.addEventListener("DOMContentLoaded", () => {
+  
+    if (typeof AuthService === "undefined") {
+      console.error("AuthService not loaded")
+      return
+    }
+  
+    const authService = new AuthService()
+  
+    const user = authService.getCurrentUser()
+  
+    if (!user) {
+      window.location.href = "login.html"
+      return
+    }
+  
+    if (user.userType !== "farmer") {
+      window.location.href = "farmer.html"
+    }
+  
+    const userNameElements = document.querySelectorAll(".user-name")
+    if (userNameElements) {
+      userNameElements.forEach((element) => {
+        element.textContent = user.name
+      })
+    }
+  
+
+    const logoutButtons = document.querySelectorAll(".logout-button")
+    if (logoutButtons) {
+      logoutButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault()
+          authService.logout()
+          window.location.href = "login.html"
+        })
+      })
+    }
+  
+    initDashboard()
+  
+    setupEventListeners()
+  
+    displayFarmerProducts()
+  
+    populateUserData()
+  })
+  
 const products = JSON.parse(localStorage.getItem("products")) || []
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -42,7 +90,6 @@ closeButtons.forEach((button) => {
   })
 })
 
-// Close modals when clicking outside
 window.onclick = (event) => {
   if (event.target.classList.contains("modal")) {
     event.target.style.display = "none"
