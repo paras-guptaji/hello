@@ -5,7 +5,7 @@ const userData = {
     address: "fase-2 sada colony",
     phone: "+91 8388928831",
     profileImage:
-      "https://unsplash.com/photos/young-indian-farmer-standing-in-cotton-agriculture-field-lV55D_U5l50",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
   }
   
   const products = JSON.parse(localStorage.getItem("products")) || []
