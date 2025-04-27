@@ -1,5 +1,5 @@
 const userData = {
-    name: "D.K Tripathi",
+    name: "Farmer",
     farmName: "Green Valley Organics Of The World",
     email: "directfarm@gmail.com",
     address: "UIT, Golapbag, Bardhhaman",
